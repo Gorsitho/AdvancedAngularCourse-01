@@ -15,7 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 import { NopagefoundComponent } from './shared/nopagefound/nopagefound.component';
 
-
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({ // Esto es un decorador.
@@ -23,13 +23,16 @@ import { NopagefoundComponent } from './shared/nopagefound/nopagefound.component
     AppComponent,
     LoginComponent,
     RegisterComponent,
+   
+
   
   ],
   imports: [ // Importaciones como por ejemplo un enrutamiento.
     BrowserModule,
     APP_ROUTES,
     PagesModule,
-    SharedModule
+    SharedModule,
+    FormsModule //Temporal
   ],
   providers: [], // Para los servicios
   bootstrap: [AppComponent]
