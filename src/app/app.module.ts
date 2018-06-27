@@ -16,6 +16,9 @@ import { RegisterComponent } from './login/register.component';
 import { NopagefoundComponent } from './shared/nopagefound/nopagefound.component';
 
 import { FormsModule } from '@angular/forms';
+//Servicios
+import { ServiceModule } from './services/service.module';
+
 
 
 @NgModule({ // Esto es un decorador.
@@ -32,7 +35,8 @@ import { FormsModule } from '@angular/forms';
     APP_ROUTES,
     PagesModule,
     SharedModule,
-    FormsModule //Temporal
+    FormsModule,
+    ServiceModule //Temporal
   ],
   providers: [], // Para los servicios
   bootstrap: [AppComponent]
