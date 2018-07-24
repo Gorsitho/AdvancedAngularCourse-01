@@ -15,7 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 import { NopagefoundComponent } from './shared/nopagefound/nopagefound.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //Servicios
 import { ServiceModule } from './services/service.module';
 
@@ -36,6 +36,7 @@ import { ServiceModule } from './services/service.module';
     PagesModule,
     SharedModule,
     FormsModule,
+    ReactiveFormsModule,
     ServiceModule //Temporal
   ],
   providers: [], // Para los servicios

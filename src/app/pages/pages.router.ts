@@ -6,6 +6,7 @@ import { Graficas1Component } from "./graficas1/graficas1.component";
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { LoginGuardGuard } from '../services/service.index';
 
 
 
@@ -15,7 +16,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 const pagesRouter: Routes =[
     { 
         path: '' , // Ruta
-         component: PagesComponent, // Componente al que se quiere dirigir.
+         component: PagesComponent,
+         canActivate:[LoginGuardGuard], // Componente al que se quiere dirigir.
          children:[ // De esta manera se crean Subrutas partiendo del componente PagesComponent.
 
             { path: 'dashboard' , component: DashboardComponent,data:{titulo:'Dashboard'}},
