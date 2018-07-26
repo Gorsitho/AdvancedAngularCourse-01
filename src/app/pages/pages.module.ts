@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
 //Modulos
 import { SharedModule } from '../shared/shared.module';
 
@@ -20,6 +20,11 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 
+// Pipes module.
+import { PipesModule } from '../pipes/pipes.module';
+import { ProfileComponent } from './profile/profile.component';
+
+
 
 
 @NgModule({
@@ -33,7 +38,8 @@ declarations:[
     GraficoDonaComponent,
     AccountSettingsComponent,
     PromesasComponent,
-    RxjsComponent
+    RxjsComponent,
+    ProfileComponent
    
 ],
 exports:[ // Se exportan si van a ser usadas en elementos exteriores.
@@ -44,10 +50,12 @@ exports:[ // Se exportan si van a ser usadas en elementos exteriores.
 
 ],
 imports:[
+    CommonModule,
     SharedModule, // Se importa el modulo compartido.
     PAGES_ROUTES, // Enrutamiento de pages. De esta manera queda todo mas separado y ordenado.
     FormsModule,
-    ChartsModule
+    ChartsModule,
+    PipesModule
 ]
 
 
