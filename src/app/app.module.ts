@@ -20,13 +20,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServiceModule } from './services/service.module';
 
 
-
-
 @NgModule({ // Esto es un decorador.
   declarations: [ // Todos los componentes deben ser declarados en este lugar.
     AppComponent,
     LoginComponent,
-    RegisterComponent,
+    RegisterComponent
     
    
 

@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
       
      // let profile = googleUser.getBasicProfile();
         let token = googleUser.getAuthResponse().id_token; 
-        console.log(token);
+        //console.log(token);
         this._usuarioService.loginGoogle(token)
                   .subscribe(()=>window.location.href='#/dashboard'); 
     // Bug al cargar la pagina, se utiliza un href para solventar el problema parcialmente.
