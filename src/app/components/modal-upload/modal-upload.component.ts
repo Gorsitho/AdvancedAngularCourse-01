@@ -42,7 +42,7 @@ export class ModalUploadComponent implements OnInit {
     }
  
     if (archivo.type.indexOf('image')<0) {
- 
+     this.cerrarModal();
      swal('Solo imagenes','El archivo seleccionado no es una imagen','error');
      this.imagenSubir=null;
       return;

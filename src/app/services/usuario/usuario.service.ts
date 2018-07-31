@@ -7,6 +7,7 @@ import swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { ThrowStmt } from '../../../../node_modules/@angular/compiler';
 import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
+import { HospitalService } from '../hospital/hospital.service';
 
 @Injectable()
 export class UsuarioService {
@@ -14,7 +15,11 @@ export class UsuarioService {
   usuario:Usuario;
   token:string;
 
-  constructor( public http: HttpClient, public router:Router,public _subirArchivoService:SubirArchivoService ) { //Inyectar servicios
+  constructor( 
+    public http: HttpClient,
+     public router:Router,
+     public _subirArchivoService:SubirArchivoService,
+    ) { //Inyectar servicios
 
     console.log('Servicio de usuario listo.');
     this.cargarStorage();
@@ -55,6 +60,7 @@ export class UsuarioService {
     
     this.usuario=usuario;
     this.token=token;
+    
   }
 
   logout(){
