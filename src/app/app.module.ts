@@ -18,13 +18,15 @@ import { NopagefoundComponent } from './shared/nopagefound/nopagefound.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //Servicios
 import { ServiceModule } from './services/service.module';
+import { PagesComponent } from './pages/pages.component';
 
 
 @NgModule({ // Esto es un decorador.
   declarations: [ // Todos los componentes deben ser declarados en este lugar.
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PagesComponent
     
    
 
@@ -33,11 +35,11 @@ import { ServiceModule } from './services/service.module';
   imports: [ // Importaciones como por ejemplo un enrutamiento.
     BrowserModule,
     APP_ROUTES,
-    PagesModule,
+    //PagesModule, //// comentariado para usar el Lazy load
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    ServiceModule //Temporal
+    ServiceModule, //Temporal
   ],
   providers: [], // Para los servicios
   bootstrap: [AppComponent]

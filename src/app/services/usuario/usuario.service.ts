@@ -4,13 +4,15 @@ import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+//import 'rxjs/add/operator/throw';
+
+
 import swal from 'sweetalert2';
 import { Router } from '@angular/router';
-import { ThrowStmt } from '../../../../node_modules/@angular/compiler';
-import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
-import { HospitalService } from '../hospital/hospital.service';
-import { Observable } from 'rxjs/Observable';
 
+import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
+import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class UsuarioService {
 
@@ -26,6 +28,24 @@ export class UsuarioService {
 
     console.log('Servicio de usuario listo.');
     this.cargarStorage();
+  }
+
+  renuevaToken(){
+
+    let url=URL_SERVICIOS+'/login/renuevatoken?token='+this.token;
+
+    return this.http.get(url).map((resp:any)=>{
+
+      this.token=resp.token;
+      localStorage.setItem('token',this.token);
+      console.log('token renovado');
+      return true;
+    }).catch(err =>{
+      this.router.navigate(['/login']);
+      swal('No se pudo renovar token','No fue posible renovar token.','error');
+      return Observable.throw(err);
+
+    });
   }
 
   estaLogueado(){

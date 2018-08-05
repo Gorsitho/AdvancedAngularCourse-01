@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 
 // Pipes module.
 import { PipesModule } from '../pipes/pipes.module';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 
 
 
@@ -22,7 +23,8 @@ declarations:[
     HeaderComponent,
     SidebarComponent,
     BreadcrumbsComponent,
-    NopagefoundComponent
+    NopagefoundComponent,
+    ModalUploadComponent
 ],
 exports:[
 
@@ -30,7 +32,8 @@ exports:[
     HeaderComponent,
     SidebarComponent,
     BreadcrumbsComponent,
-    NopagefoundComponent
+    NopagefoundComponent,
+    ModalUploadComponent
 
 ]
 

@@ -38,7 +38,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
 @NgModule({
 
 declarations:[
-    PagesComponent,
+    //PagesComponent, // comentariado para usar el Lazy load
     DashboardComponent,
     ProgressComponent,
     Graficas1Component,
@@ -49,7 +49,7 @@ declarations:[
     RxjsComponent,
     ProfileComponent,
     UsuariosComponent,
-    ModalUploadComponent,
+    //ModalUploadComponent, // comentariado para usar el Lazy load
     HospitalesComponent,
     MedicosComponent,
     MedicoComponent,
